@@ -56,6 +56,7 @@ Console.WriteLine(max);
 
 */
 
+/*
 // Найти максимум из 9 чисел.
 // Функция внутри аргумента.
 
@@ -83,3 +84,26 @@ int max = Max(
     Max(a3, b3, c3));
 
 Console.WriteLine(max);
+*/
+
+// Найти максимум из 9 чисел.
+// Избавляемся от большого количества переменных.
+
+int Max(int arg1, int arg2, int arg3) // Сравним по 3 числа.
+{
+    int result = arg1;
+    if(arg2 > result) result = arg2;
+    if(arg3 > result) result = arg3;
+    return result;
+} 
+//               0   1   2   3   4   5   6   7   8
+int[] array = { 11, 251, 31, 41, 15, 61, 17, 18, 19 };
+// array[0] = 12; //обращаемся к элементу массива и присваиваем ему значение
+// Console.WriteLine(array[4]); //выводим соответствующее значение элемента по индексу
+
+int max = Max( // вместо max можно result
+    Max(array[0], array[1], array[2]),
+    Max(array[3], array[4], array[5]),
+    Max(array[6], array[7], array[8])
+);
+Console.WriteLine(max); // вместо max можно result
