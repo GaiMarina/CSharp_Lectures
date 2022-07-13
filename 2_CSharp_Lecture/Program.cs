@@ -85,7 +85,7 @@ int max = Max(
 
 Console.WriteLine(max);
 */
-
+/*
 // Найти максимум из 9 чисел.
 // Избавляемся от большого количества переменных.
 
@@ -107,3 +107,42 @@ int max = Max( // вместо max можно result
     Max(array[6], array[7], array[8])
 );
 Console.WriteLine(max); // вместо max можно result
+*/
+/*
+// В одномерном массиве array из n элементов найти элемент массива равный find.
+
+int[] array = {1, 12, 31, 4, 18, 16, 17, 8};
+
+int n = array.Length; //array.Length возвращает длину/количество элементов массива.
+int find = 18;
+
+int index = 0;
+
+while(index < n)
+{
+    if(array[index] == find)
+    {
+        Console.WriteLine(index);
+    }
+    index++;
+}
+*/
+
+//Если в массиве будет несколько одинаковых элементов, алгоритм покажет их всех. 
+
+int[] array = {18, 12, 31, 4, 18, 16, 17, 18};
+
+int n = array.Length; //array.Length возвращает длину/количество элементов массива.
+int find = 18;
+
+int index = 0;
+
+while(index < n)
+{
+    if(array[index] == find)
+    {
+        Console.WriteLine(index);
+        break; //прерви! Находим первый элемент и после этого завершаем.
+    }
+    index++;
+}
