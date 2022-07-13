@@ -127,7 +127,7 @@ while(index < n)
     index++;
 }
 */
-
+/*
 //Если в массиве будет несколько одинаковых элементов, алгоритм покажет их всех. 
 
 int[] array = {18, 12, 31, 4, 18, 16, 17, 18};
@@ -146,3 +146,91 @@ while(index < n)
     }
     index++;
 }
+*/
+/*
+// Взять метод нахождения случайных чисел. Передать в него массив.
+// Заполнить массив нужным количеством элементов. 
+// Метод, который будет выводить все элементы по порядку. 
+
+void FillArray(int[] collection) //метод, который заполнил наш массив.
+{
+    int length = collection.Length;
+    int index = 0;
+    while (index < length)
+    {
+        collection[index] = new Random().Next(1, 10); 
+        // положили новое в collection случайное целое число из диапазона 1-10
+        index++;
+    }
+}
+
+void PrintArray(int[] col) // метод, который распечатал,вывел наш массив.
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.WriteLine(col[position]);
+        position++;
+    }
+}
+
+int[] array = new int[10]; //создай новый массив в котором будет 10 элементов.
+                           //определили массив в котором будет 10 элементов.
+FillArray(array);
+PrintArray(array);
+*/
+
+// Превратим код поиска нужного нам индекса в метод.
+
+void FillArray(int[] collection) //метод, который заполнил наш массив.
+{
+    int length = collection.Length;
+    int index = 0;
+    while (index < length)
+    {
+        collection[index] = new Random().Next(1, 10); 
+        // положилиновое в collection случайное целое число из диапазона 1-10
+        index++;
+    }
+}
+
+void PrintArray(int[] col) // метод, который распечатал,вывел наш массив.
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.WriteLine(col[position]);
+        position++;
+    }
+}
+
+int IndexOf(int[] collection, int find);
+{
+    int count = collection.Length;
+    int index = 0;
+    int position = -1;
+
+    while (index < count)
+    {
+        if(collection[index] == find)
+        {
+            position = index;
+            break;
+        }
+        index++;
+    }
+    return position;
+}
+
+int[] array = new int[10];
+
+FillArray(array);
+PrintArray(array);
+array[4] = 4;
+array[6] = 4;
+Console.WriteLine();
+
+int pos = IndexOf(array, 4);
+Console.WriteLine(pos);
