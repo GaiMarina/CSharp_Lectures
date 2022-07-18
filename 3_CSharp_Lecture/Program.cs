@@ -54,7 +54,7 @@ void Method1()
 int year = Method3();
 Console.WriteLine(year);
 */
-
+/*
 // 4.Тип. Что-то принимают, что-то возвращают.
 string Method4(int count, string text)
 {
@@ -70,3 +70,48 @@ string Method4(int count, string text)
 }
 string res = Method4(10, "z");
 Console.WriteLine(res);
+*/
+/*
+// FOR
+for(int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i)
+}
+*/
+//Example.
+/*
+string Method4(int count, string text)
+{
+    string result = String.Empty;
+    for(int i = 0; i < count; i++)
+    {
+        result = result + text;
+    }  
+    return result;
+}
+string res = Method4(10, "z");
+Console.WriteLine(res);
+*/
+/*
+//ЦИКЛ В ЦИКЛЕ.
+for(int i = 0; i < 10; i++)
+{
+    for(int j = 0; j < 10; j++)
+    {
+        Console.WriteLine(i*j)
+    }
+    Console.WriteLine()
+}
+*/
+/*
+//Таблица умножения.
+for(int i = 2; i <= 10; i++)
+{
+    for (int j = 2; j <= 10; j++)
+    {
+        Console.WriteLine($"{i} x {j} = {i * j}");
+    }
+    Console.WriteLine(); //Для пустой строки после результатов по каждой цифре.
+}
+*/
+ 
