@@ -87,3 +87,33 @@ Console.WriteLine(FactorialFor(10)); //3628800
 Console.WriteLine(FactorialRec(10)); //3628800
 */
 //=========================
+ 
+// 3. Вычислить a в степени n.(степень - натуральное число)
+
+int PowerFor(int a, int n)
+{
+    int result = 1;
+    for(int i = 1; i <= n; i++) result *= a;
+    return result;
+}
+
+int PowerRec(int a, int n)
+{//0 в степени 0 рассмотреть отдельно.
+//тернарный оператор: все решение 1-й строчкой:
+    return n == 0 ? 1 : PowerRec(a, n - 1) * a;
+    //if(n == 0) return 1; //обязательное условие выхода.
+    //else return PowerRec(a, n - 1) * a;
+}
+
+// Упрощение с мат.формулами.
+
+int PowerRecMath(int a, int n)
+{
+    if(n == 0) return 1;
+    else if (n % 2 == 0) return PowerRecMath(a * a, n / 2);
+    else return PowerRecMath(a, n - 1) * a;
+}
+
+Console.WriteLine(PowerFor(2,10)); //1024
+Console.WriteLine(PowerRec(2,10)); //1024
+Console.WriteLine(PowerRecMath(2,10)); //1024
