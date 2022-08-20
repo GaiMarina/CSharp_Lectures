@@ -87,7 +87,7 @@ Console.WriteLine(FactorialFor(10)); //3628800
 Console.WriteLine(FactorialRec(10)); //3628800
 */
 //=========================
- 
+ /*
 // 3. Вычислить a в степени n.(степень - натуральное число)
 
 int PowerFor(int a, int n)
@@ -117,3 +117,48 @@ int PowerRecMath(int a, int n)
 Console.WriteLine(PowerFor(2,10)); //1024
 Console.WriteLine(PowerRec(2,10)); //1024
 Console.WriteLine(PowerRecMath(2,10)); //1024
+*/
+//=======================
+/*
+// 4. Перебор слов.
+//    Есть машинный алфавит из 4-х букв. Показать все слова из этих букв.
+
+char[] s = { 'а', 'и', 'с', 'в'};
+
+int count = s.Length;
+
+int n = 1;
+
+for(int i = 0; i < count; i++) //однобуквенные слова
+    Console.WriteLine($"{n++, -5}{s[i]}");
+*/
+// двубуквенные слова
+/*
+char[] s = { 'а', 'и', 'с', 'в'};
+
+int count = s.Length;
+
+int n = 1;
+
+for(int i = 0; i < count; i++)
+    for(int j = 0; j <  count; j++)
+    Console.WriteLine($"{n++, -5}{s[i]}{s[j]}");
+*/
+//рекурсия. Общее решение.
+
+int n = 1;
+
+void FindWords(string alphabet, char[] word, int length = 0)
+{
+    if(length == word.Length)
+    {
+       Console.WriteLine($"{n++} {new String(word)}"); return;
+    }
+ 
+    for(int i = 0; i < alphabet.Length; i++)
+    {
+        word[length] = alphabet[i];
+        FindWords(alphabet, word, length + 1);
+    }
+}
+FindWords("аисв", new char[5]);
