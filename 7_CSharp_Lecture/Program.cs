@@ -23,7 +23,7 @@ Console.WriteLine(NumbersFor(1,10)); //10 входит.
 Console.WriteLine(NumbersRec(1,10)); //10 входит.
 */
 //=========================
-
+/*
 // 1 задача в обратном порядке.
 // 1. Собрать строку с числами от a до b, a >= b.
 
@@ -65,3 +65,25 @@ int SumRec(int n)
 
 Console.WriteLine(SumFor(10)); //55
 Console.WriteLine(SumRec(10)); //55
+*/
+//===================
+/*
+//Факториал числа: произведение от 1 до n.
+
+int FactorialFor(int n)
+{
+    int result = 1;
+    for(int i = 1; i <= n; i++) result *= i;
+    return result;
+}
+
+int FactorialRec(int n)
+{
+    if(n == 1) return 1; //обязательное условие выхода. 0! = 1 - тоже лучше описать.
+    else return n * FactorialRec(n - 1);
+}
+
+Console.WriteLine(FactorialFor(10)); //3628800
+Console.WriteLine(FactorialRec(10)); //3628800
+*/
+//=========================
